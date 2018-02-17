@@ -1,4 +1,4 @@
-![CSCore Logo](http://uploaddeimagens.com.br/images/001/294/452/original/SmallLogo.png?1518902978)
+![pontoclass Logo](http://uploaddeimagens.com.br/images/001/294/468/original/SmallLogo_200_125.png?1518903690)
 
 # Consultoria e Treinamento #
 
