@@ -1,0 +1,11 @@
+---
+# tasks file for commons
+- name: update dist
+  apt:
+    upgrade: dist
+    update_cache: yes
+    dpkg_options: 'force-confold,force-confdef'
+  become: yes
+
+  
+    

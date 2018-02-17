@@ -1,0 +1,14 @@
+[rancher-server]
+192.168.0.100
+
+[rancher-slaves]
+192.168.0.101
+192.168.0.102
+
+[all:children]
+rancher-server
+rancher-slaves
+
+[all:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
