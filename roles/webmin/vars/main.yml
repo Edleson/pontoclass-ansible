@@ -1,0 +1,12 @@
+---
+# vars file for webmin
+ansible_webmin_packages:
+  - perl
+  - libnet-ssleay-perl
+  - openssl
+  - libauthen-pam-perl
+  - libpam-runtime
+  - libio-pty-perl
+  - apt-show-versions
+  - webmin
+  
