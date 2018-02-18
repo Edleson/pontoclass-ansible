@@ -1,11 +1,31 @@
 ---
 # tasks file for commons
-- name: update dist
+- name: Atualizando a distribuição do linux
   apt:
     upgrade: dist
     update_cache: yes
     dpkg_options: 'force-confold,force-confdef'
   become: yes
 
-  
-    
+- name: Instalando pacotes e dependências.
+  apt:
+    name: "{{ item }}"
+    state: latest
+    install_recommends: no
+    dpkg_options: 'force-confold,force-confdef'
+  with_items: "{{ ansible_apt_packages }}"
+  become: yes
+
+- name: Instalando pacotes do python
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ ansible_pip_packages }}"
+  become: yes
+
+# - name: Configura o timezone America/Sao_Paulo
+#   timezone:
+#     name: America/Sao_Paulo
+#     hwclock: UTC
+#   become: yes
+ 

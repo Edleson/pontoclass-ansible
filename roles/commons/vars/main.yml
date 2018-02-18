@@ -1,2 +1,13 @@
 ---
 # vars file for commons
+
+ansible_apt_packages:
+  - vim
+  - python-apt
+  - python3-apt
+  - aptitude
+  - python-pip
+
+ansible_pip_packages:
+  - virtualenv
+  - docker-py
