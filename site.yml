@@ -1,3 +1,7 @@
 - hosts: all
   roles:
     - commons
+
+- hosts: rancher-server
+  roles:
+    - webmin

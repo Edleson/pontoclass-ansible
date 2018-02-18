@@ -1,6 +1,6 @@
 ![pontoclass Logo](http://uploaddeimagens.com.br/images/001/294/468/original/SmallLogo_200_125.png?1518903690)
 
-# Pontoclass Ansible [![Build Status](https://travis-ci.org/Edleson/pontoclass-ansible.svg?branch=master)](https://travis-ci.org/Edleson/pontoclass-ansible) [![License](http://img.shields.io/:license-MIT-blue.svg)](https://github.com/Edleson/pontoclass-ansible/blob/master/LICENSE)
+# Pontoclass Ansible [![Build Status](https://travis-ci.org/Edleson/pontoclass-ansible.svg?branch=master)](https://travis-ci.org/Edleson/pontoclass-ansible) [![License](http://img.shields.io/:license-MIT-blue.svg)](https://github.com/Edleson/pontoclass-ansible/blob/master/LICENSE)[![Platform](http://img.shields.io/badge/platform-debian-a80030.svg?style=flat)](#)[![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 
 Esse projeto é uma POC devops, que coloca em pratica os conceitos de infra ágil e devops, criandos algumas stacks necessárias para uma pequena empresa. Tudo será criado na rede local utilizando o virutalbox como provedor de hosts que será orquestrado pelo vagrant.
 

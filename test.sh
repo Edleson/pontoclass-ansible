@@ -13,7 +13,10 @@ echo "Create directory for tests"
 mkdir -p tests/roles
 cd tests/roles
 pwd
+
 ln -s ../../roles/commons commons
+ln -s ../../roles/webmin webmin
+
 ansible-playbook ../test.yml -i ../inventory --syntax-check
 
 echo "Clear directory for test"
