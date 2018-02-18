@@ -27,6 +27,7 @@ script:
   # Create links for roles
   - ln -s ../../roles/commons commons
   - ln -s ../../roles/webmin webmin
+  - ln -s ../../roles/bind9 bind9
   
   # Execute os tests
   # Basic role syntax check

@@ -17,6 +17,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "srv01dev" do |config|
     config.vm.hostname = "srv01dev.pontoclass.corp"
     config.vm.network :public_network, ip: "192.168.0.100"
+    config.vm.provider :virtualbox do |v|
+      v.memory = 2048
+    end
   end
 
   #Host02 defined how rancher-slaves

@@ -1,0 +1,14 @@
+---
+# tasks file for bind9
+- name: Instalando DNS Server Bind9
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ ansible_bind_packages }}"
+  become: yes
+
+- name: Verificando se o serviço de DNS está rodando
+  service:
+    name: bind9
+    state: started
+  become: yes

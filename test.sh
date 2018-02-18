@@ -16,6 +16,7 @@ pwd
 
 ln -s ../../roles/commons commons
 ln -s ../../roles/webmin webmin
+ln -s ../../roles/bind9 bind9
 
 ansible-playbook ../test.yml -i ../inventory --syntax-check
 

@@ -4,3 +4,4 @@
   roles:
     - commons
     - webmin
+    - bind9
