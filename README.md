@@ -14,7 +14,7 @@ Ao final da POC a idéia é subir toda a infra em alguns minutos utilizando todo
   4. Rode `ansible-galaxy install -r requirements.yml` no diretorio onde se encontra o projeto ansible.
   5. Rode `vagrant up` para construir as máquinas virtuais.
 
-## License
+## License 
 
 MIT
 
