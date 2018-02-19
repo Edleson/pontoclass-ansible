@@ -1,0 +1,8 @@
+---
+# vars file for mailhog
+mailhog_config_template: config/default.dev.j2
+mailhog_config_file: /etc/default/mailhog
+mailhog_config:
+  - api-bind-addr: 0.0.0.0:8025
+  - ui-bind-addr: 0.0.0.0:8025
+  - smtp-bind-addr: 0.0.0.0:1025

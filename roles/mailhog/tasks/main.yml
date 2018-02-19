@@ -1,0 +1,11 @@
+---
+# Install
+- include: install.yml
+  tags:
+    - mailhog
+
+# Config
+- include: config.yml
+  tags:
+    - mailhog
+    - config

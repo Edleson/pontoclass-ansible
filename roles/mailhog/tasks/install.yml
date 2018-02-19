@@ -1,0 +1,48 @@
+---
+# Instalação e configuração do mailhog
+- name: Verificando se o diretório de instalação ("{{ mailhog_install_dir  }}")
+  file:
+    path: "{{ mailhog_install_dir }}"
+    owner: root
+    group: root
+    state: directory
+    mode: 0755
+  become: yes
+
+- name: Download dos binários do MailHog e mhsendmail.
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - url: "{{ mailhog_binary_url }}"
+      dest: "{{ mailhog_install_dir }}/mailhog"
+    - url: "{{ mhsendmail_binary_url }}"
+      dest: "{{ mailhog_install_dir }}/mhsendmail"
+  become: yes
+
+- name: Copiando o script de inicialização diferentes de 'systemd'
+  template:
+    src: mailhog.init.j2
+    dest: /etc/init.d/mailhog
+    owner: root
+    group: root
+    mode: 0755
+  when: "ansible_service_mgr != 'systemd'"
+  become: yes
+
+- name: Copiando o script de inicialização iguais à 'systemd'
+  template:
+    src: mailhog.unit.j2
+    dest: /etc/systemd/system/mailhog.service
+    owner: root
+    group: root
+    mode: 0755
+  when: "ansible_service_mgr == 'systemd'"
+  become: yes
+
+- name: Verificando se o serviço do mailhog está rodando
+  service: name=mailhog state=started enabled=yes
+  become: yes

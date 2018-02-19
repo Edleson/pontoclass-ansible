@@ -1,5 +1,13 @@
 ---
 # tasks file for commons
+- name: Permite 'sudo' grup ter passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%sudo'
+    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+  become: yes
+
 - name: Atualizando a distribuição do linux
   apt:
     upgrade: dist

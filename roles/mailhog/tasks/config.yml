@@ -1,0 +1,8 @@
+- name: Configurando o bootstrap do mailhog
+  template:
+    src:  "{{ mailhog_config_template|ternary(mailhog_config_template, 'config/empty.j2') }}"
+    dest: "{{ mailhog_config_file }}"
+  when: (mailhog_config_template is not none) or (mailhog_config|length)
+  become: yes
+  notify:
+    - mailhog restart

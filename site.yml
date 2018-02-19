@@ -5,4 +5,5 @@
 - hosts: rancher-server
   roles:
     - bind9
+    - mailhog
     - webmin

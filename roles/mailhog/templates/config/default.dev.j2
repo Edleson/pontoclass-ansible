@@ -1,0 +1,10 @@
+{%- import '_macros.j2' as macros with context -%}
+
+{% set config = mailhog_config -%}
+
+# Additional options that are passed to the Daemon.
+DAEMON_ARGS="{{ macros.config_row(config, 'smtp-bind-addr', '0.0.0.0:25') }}{{ (' ' ~ macros.config(config, [
+    'smtp-bind-addr',
+    'api-bind-addr',
+    'ui-bind-addr'
+])).rstrip() }}"
