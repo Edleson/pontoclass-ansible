@@ -6,3 +6,4 @@
     - webmin
     - bind9
     - mailhog
+    - nfs-server

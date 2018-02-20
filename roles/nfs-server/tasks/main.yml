@@ -1,0 +1,33 @@
+---
+# tasks file for nfs-server
+- name: Instalando nfs-server
+  apt:
+    name: nfs-kernel-server
+    state: present
+  become: yes
+
+- name: Criando o diretório /nfs
+  file:
+    path: /nfs
+    state: directory
+    mode: 0755
+    owner: nobody
+    group: nogroup
+  become: yes
+
+- name: Atualizando o aquivo /etc/exports
+  lineinfile:
+    dest: /etc/exports
+    regexp: '^/nfs'
+    line: '/nfs    *(rw,sync,no_subtree_check,no_root_squash)'
+    state: present
+  notify:
+    - nfs-kernel-server restart
+  become: yes
+
+- name: Verificando se o nfs-server está rodando
+  service:
+    name: nfs-kernel-server
+    state: started
+  become: yes
+

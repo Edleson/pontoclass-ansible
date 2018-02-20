@@ -18,6 +18,7 @@ ln -s ../../roles/commons commons
 ln -s ../../roles/webmin webmin
 ln -s ../../roles/bind9 bind9
 ln -s ../../roles/mailhog mailhog
+ln -s ../../roles/nfs-server nfs-server
 
 ansible-playbook ../test.yml -i ../inventory --syntax-check
 
